@@ -1,0 +1,14 @@
+<h1>Lista de Atendimentos: {{qtd}}</h1>
+
+<div>
+  {{#each atendimentos}}
+    <h2>ID atendimento: {{id}}</h2>
+    <p>ID do paciente:
+      <a href="/get/paciente/{{this.pacienteId}}"> {{this.pacienteId}}</a>
+    </p>
+    <p>
+      Descrição:
+      {{this.descricao}}
+    </p>
+  {{/each}}
+</div>

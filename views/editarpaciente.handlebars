@@ -1,0 +1,49 @@
+<h1>Editar paciente: {{nome}}</h1>
+<p>ID: {{id}}</p>
+<p>E-mail: {{email}}</p>
+
+<div>
+  {{#if temAtendimento}}
+    {{#each atendimentos}}
+      <p>ID do atendimento:
+        <a href="/get/atendimento/{{this.id}}">{{this.id}}</a></p>
+      <p>
+        Descricao:
+        {{this.descricao}}
+      </p>
+    {{/each}}
+  {{else}}
+    <p><em>Sem atendimento registrado.</em></p>
+  {{/if}}
+</div>
+
+<form class="form" action="/edit/paciente/{{id}}?_method=PATCH" method="POST">
+  <input type="hidden" name="id" value="{{id}}" />
+  <div class="main-container">
+    <label for="novoNome">Novo nome:</label>
+    <input type="text" id="novoNome" name="novoNome" value="{{nome}}" />
+  </div>
+  <div class="main-container">
+    <label for="novoEmail">E-mail:</label>
+    <input type="email" id="novoEmail" name="novoEmail" value="{{email}}" />
+  </div>
+  <div class="main-container">
+    <label for="novoAtendimento">Atendimento:</label>
+    <textarea id="novoAtendimento" name="novoAtendimento"></textarea>
+  </div>
+  <input type="submit" value="Salvar" />
+</form>
+
+<h2>Enviar e-mail</h2>
+
+<form action="/email/paciente/" method="POST">
+  <input type="hidden" name="nome" value="{{nome}}" />
+  <input type="hidden" name="email" value="{{email}}" />
+  <input type="submit" value="Enviar" />
+</form>
+
+<h2>Deletar</h2>
+
+<form action="/remove/paciente/{{id}}?_method=DELETE" method="POST">
+  <input type="submit" value="Deletar" />
+</form>

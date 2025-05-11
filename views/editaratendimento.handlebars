@@ -1,0 +1,30 @@
+<h1>ID do atendimento: {{id}}</h1>
+
+<div>
+  <p>Data: {{data}}</p>
+  <p>
+    Descricao:
+    {{descricao}}
+  </p>
+</div>
+
+<h2>Editar descrição</h2>
+
+<form
+  class="form"
+  action="/edit/atendimento/{{id}}?_method=PATCH"
+  method="POST"
+  class="description"
+>
+  <div class="main-container">
+    <label for="descricao">Descrição:</label>
+    <textarea id="descricao" name="descricao"></textarea>
+  </div>
+  <input type="submit" value="Salvar" />
+</form>
+
+<h2>Deletar</h2>
+
+<form action="/remove/atendimento/{{id}}?_method=DELETE" method="POST">
+  <input type="submit" value="Deletar" />
+</form>

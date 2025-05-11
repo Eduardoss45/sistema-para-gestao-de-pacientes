@@ -1,0 +1,22 @@
+<h1>Lista de Pacientes: {{qtd}}</h1>
+
+<table border="1" cellpadding="10" cellspacing="0">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nome</th>
+      <th>E-mail</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each pacientes}}
+      <tr>
+        <td>{{this.id}}</td>
+        <td>
+          <a href="/get/paciente/{{this.id}}">{{this.nome}}</a>
+        </td>
+        <td>{{this.email}}</td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
