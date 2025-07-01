@@ -1,4 +1,4 @@
-# Sistema de Gestão de Pacientes
+# Sistema para Gestão de Pacientes
 
 Este é um sistema de gestão de pacientes com funcionalidades de cadastro, atualização, e acompanhamento de atendimentos médicos. O sistema também inclui a capacidade de enviar e-mails de boas-vindas para os pacientes.
 
